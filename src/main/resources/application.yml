@@ -18,7 +18,7 @@ spring:
             - id: user-activity
               uri: http://user-activity:8787
               predicates:
-                - Path=/api/v1/useractity/**
+                - Path=/api/v1/user-activity/**
             - id: recommendation
               uri: http://recommendation:8885
               predicates:
