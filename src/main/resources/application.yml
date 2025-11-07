@@ -7,23 +7,23 @@ spring:
       server:
         webmvc:
           routes:
-            - id: edufy-pod
-              uri: http://edufy-pod:8889
+            - id: podcast
+              uri: http://podcast:8889
               predicates:
-                - Path=/api/v1/edufypod/**
-            - id: edufy-music
-              uri: http://edufy:8888
+                - Path=/api/v1/podcast/**
+            - id: music
+              uri: http://music:8888
               predicates:
-                - Path=/api/v1/edufymusic/**
-            - id: edufy-user-activity
-              uri: http://edufy:8787
+                - Path=/api/v1/music/**
+            - id: user-activity
+              uri: http://user-activity:8787
               predicates:
-                - Path=/api/v1/edufyuseractity/**
-            - id: edufy-recomandation
-              uri: http://edufy:8885
+                - Path=/api/v1/useractity/**
+            - id: recommendation
+              uri: http://recommendation:8885
               predicates:
-                - Path=/api/v1/edufyrecommendation/**
-            - id: edufy-service
-              uri: http://edufy:8881
+                - Path=/api/v1/recommendation/**
+            - id: video
+              uri: http://video:8881
               predicates:
-                - Path=/api/v1/videoservice/**
+                - Path=/api/v1/video/**
