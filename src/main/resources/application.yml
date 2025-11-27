@@ -11,19 +11,47 @@ spring:
               uri: http://podcast:8889
               predicates:
                 - Path=/api/v1/podcast/**
+              filters:
+                 - TokenRelay=
             - id: music
               uri: http://music:8888
               predicates:
                 - Path=/api/v1/music/**
+              filters:
+                  - TokenRelay=
             - id: user-activity
               uri: http://user-activity:8787
               predicates:
                 - Path=/api/v1/user-activity/**
+              filters:
+                  - TokenRelay=
             - id: recommendation
               uri: http://recommendation:8885
               predicates:
                 - Path=/api/v1/recommendation/**
+              filters:
+                  - TokenRelay=
             - id: video
               uri: http://video:8881
               predicates:
                 - Path=/api/v1/video/**
+              filters:
+                  - TokenRelay=
+            - id: playback
+              uri: http://playback:8886
+              predicates:
+                - Path=/api/v1/playback/**
+              filters:
+                  - TokenRelay=
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: gateway
+            client-secret: http://localhost:4545/login/oauth2/code/keycloak
+            provider: keycloak
+            authorization-grant-type: password
+        provider:
+          keycloak:
+            issuer-uri: http://81.231.105.129:8083/realms/edufy
